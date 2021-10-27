@@ -5,10 +5,24 @@ body{
 }
 
 #main{
+  position: relative;
   margin: 100px;
   padding: 50px;
   padding-top: 20px;
   max-width: 400px;
   border: 5px dashed #888;
   background-color: #dde;
+}
+
+.dekor_1{
+  position: absolute;
+  right:0;
+  bottom: 0;
+  transform: translate(50%,50%);
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  z-index: -1;
+  background: repeating-radial-gradient(#559 20px, #ccc 20px,#ccc 30px,#559 30px, #559 70px);
+  opacity: 0.2;
 }
