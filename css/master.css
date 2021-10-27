@@ -8,5 +8,6 @@ body{
   margin: 100px;
   padding: 50px;
   max-width: 400px;
-  border: 5px dashed #aca;
+  border: 5px dashed #888;
+  background-color: #dde;
 }
