@@ -55,6 +55,7 @@ body{
   top: 200px;
   background: #caaa;
   overflow: hidden;
+  
 
 }
 
@@ -64,5 +65,6 @@ body{
   border: 1px dashed #444;
   background-color: #ddda;
   margin: 0 15px 10px 0;
+  background-image: radial-gradient(#ccc, #ccc 50%, #eee);
 
 }
