@@ -11,7 +11,7 @@ body{
   border: 2px dashed blue;
   height:2000px;
   background-image: repeating-linear-gradient(#eee, #eee 50px, #dcdadc 50px, #dcdadc 100px);
-  padding: 30px;
+  padding: 0px;
 }
 
 .navbar{
@@ -19,6 +19,9 @@ body{
   width: 412px;
   height: 50px;
   position: fixed;
+  top:30px;
+  left: 30px;
+  z-index: 99;
 }
 
 .navbar a{
@@ -47,16 +50,19 @@ body{
 }
 
 .imgbar_big{
+  position: relative;
   height:350px;
-  padding: 20px;
-  width: auto;
-  border: 1px dashed grey;
-  position: absolute;
-  top: 200px;
-  background: #caaa;
+  padding:20px;
+  max-width: 90%;
+  min-width: 300px;
+  margin: auto;
+  /* transform: translate(-50%); */
+  border:1px dashed grey;
+  top:200px;
+  background:#caaa;
   overflow: hidden;
-  
-
+  flex-wrap: nowrap;
+  display: flex;
 }
 
 .images{
@@ -66,5 +72,4 @@ body{
   background-color: #ddda;
   margin: 0 15px 10px 0;
   background-image: radial-gradient(#ccc, #ccc 50%, #eee);
-
 }
