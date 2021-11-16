@@ -51,7 +51,7 @@ body{
 
 .imgbar_big{
   position: relative;
-  height:350px;
+  height:450px;
   padding:20px;
   max-width: 90%;
   min-width: 300px;
@@ -66,8 +66,8 @@ body{
 }
 
 .images{
-  width:280px;
-  height: 280px;
+  width:400px;
+  height: 400px;
   border: 1px dashed #444;
   background-color: #ddda;
   margin: 0 15px 10px 0;
