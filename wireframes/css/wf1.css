@@ -1,0 +1,67 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+*{
+
+}
+
+.main{
+  border: 2px dashed blue;
+  height:2000px;
+  background-image: repeating-linear-gradient(#eee, #eee 50px, #dcdadc 50px, #dcdadc 100px);
+  padding: 30px;
+}
+
+.navbar{
+  border: 1px dashed black;
+  width: 412px;
+  height: 50px;
+  position: fixed;
+}
+
+.navbar a{
+  position: relative;
+  background: #bbb;
+  height: 30px;
+}
+
+.navbar li{
+  display: block;
+  float: left;
+  width: 100px;
+  border-right: 1px solid #333;
+  text-align: center;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.navbar li:last-child{
+  border-right: none;
+}
+
+.navbar ul{
+  margin: 0;
+  padding: 0;
+}
+
+.imgbar_big{
+  height:350px;
+  padding: 20px;
+  width: auto;
+  border: 1px dashed grey;
+  position: absolute;
+  top: 200px;
+  background: #caaa;
+  overflow: hidden;
+}
+
+.images{
+  width:280px;
+  height: 280px;
+  border: 1px dashed #444;
+  background-color: #ddda;
+  margin: 0 15px 10px 0;
+
+}
