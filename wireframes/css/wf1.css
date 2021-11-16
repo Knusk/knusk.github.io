@@ -1,6 +1,8 @@
 body{
   margin: 0;
   padding: 0;
+  background-image: repeating-linear-gradient(#eee, #eee 50px, #dcdadc 50px, #dcdadc 100px);
+  font-family: sans-serif;
 }
 
 *{
@@ -10,8 +12,9 @@ body{
 .main{
   border: 2px dashed blue;
   height:2000px;
-  background-image: repeating-linear-gradient(#eee, #eee 50px, #dcdadc 50px, #dcdadc 100px);
+
   padding: 0px;
+  margin: 25px;
 }
 
 .navbar{
@@ -24,10 +27,16 @@ body{
   z-index: 99;
 }
 
+.navbar li a {
+  display: none;
+}
+
+
 .navbar a{
   position: relative;
   background: #bbb;
-  height: 30px;
+  height: 20px;
+  display: block;
 }
 
 .navbar li{
@@ -48,6 +57,19 @@ body{
   margin: 0;
   padding: 0;
 }
+
+.navbar li:first-child a{
+  display: block;
+  color: green;
+}
+
+.navbar ul:first-child:hover a{
+  /* position: absolute; */
+/* background: red; */
+display: block;
+}
+
+
 
 .imgbar_big{
   position: relative;
