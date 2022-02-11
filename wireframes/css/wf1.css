@@ -1,29 +1,27 @@
-body{
+body {
   margin: 0;
   padding: 0;
   background-image: repeating-linear-gradient(#eee, #eee 50px, #dcdadc 50px, #dcdadc 100px);
   font-family: sans-serif;
 }
 
-*{
-
-}
-
-.main{
+.main {
+  position: relative;
+  top: 0;
+  left: 0;
   border: 2px dashed blue;
-  height:2000px;
-
+  height: 2000px;
   padding: 0px;
-  margin: 25px;
+  margin: 30px 55px;
 }
 
-.navbar{
-  border: 1px dashed black;
+.navbar {
+  position: absolute;
+  background-color: #bbb;
   width: 412px;
   height: 50px;
-  position: fixed;
-  top:30px;
-  left: 30px;
+  top: 0;
+  left: 0;
   z-index: 99;
 }
 
@@ -31,15 +29,14 @@ body{
   display: none;
 }
 
-
-.navbar a{
+.navbar a {
   position: relative;
   background: #bbb;
   height: 20px;
   display: block;
 }
 
-.navbar li{
+.navbar li {
   display: block;
   float: left;
   width: 100px;
@@ -49,46 +46,44 @@ body{
   margin-top: 15px;
 }
 
-.navbar li:last-child{
+.navbar li:last-child {
   border-right: none;
 }
 
-.navbar ul{
+.navbar ul {
   margin: 0;
   padding: 0;
 }
 
-.navbar li:first-child a{
+.navbar li:first-child a {
   display: block;
   color: green;
 }
 
-.navbar ul:first-child:hover a{
+.navbar ul:first-child:hover a {
   /* position: absolute; */
-/* background: red; */
-display: block;
+  /* background: red; */
+  display: block;
 }
 
-
-
-.imgbar_big{
+.imgbar_big {
   position: relative;
-  height:450px;
-  padding:20px;
+  height: 450px;
+  padding: 20px;
   max-width: 90%;
   min-width: 300px;
   margin: auto;
   /* transform: translate(-50%); */
-  border:1px dashed grey;
-  top:200px;
-  background:#caaa;
+  border: 1px dashed grey;
+  top: 200px;
+  background: #caaa;
   overflow: hidden;
   flex-wrap: nowrap;
   display: flex;
 }
 
-.images{
-  width:400px;
+.images {
+  width: 400px;
   height: 400px;
   border: 1px dashed #444;
   background-color: #ddda;
