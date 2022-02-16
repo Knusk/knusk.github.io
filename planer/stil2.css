@@ -21,8 +21,3 @@
 .new-row {
   grid-column-start: 1;
 }
-
-div.litenskrift{
-  font-size: 0.8em;
-  font-style: italic;
-}
