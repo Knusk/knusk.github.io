@@ -85,7 +85,7 @@ void keyPressed() {
     /// så da må vi bestemme hvilken side han skal gå til og om det eventuelt
     /// er andre variabler (helse, moral, flaks, penger etc) som skal forandres
 
-    side == 200;
+    side = 200;
     
   } else {
     /// hvis svaret er 'nei' så fortsetter vi som vanlig ...
