@@ -5,12 +5,12 @@
  */
 
 PFont f;            /// Dette er en variabel for å 'holde på' den fonten du vil bruke.
-/// Det går fint å lage flere av disse for flere fonter ...
+                    /// Det går fint å lage flere av disse for flere fonter ...
 PImage img;         /// En variabel for å hente inn bilder ...
 int side;           /// En variabel som holder orden på sidetallet du er på ...
 int alt;            /// Alternative sider? Sidespor?
 String msg;         /// msg = melding = Teksten som dukker opp hver side
-/// Det vil si... det er en tekstfil som blir lastet inn (for hele historien), og denne variabelen brukes på hver side for å vise riktig tekst ...
+                    /// Det vil si... det er en tekstfil som blir lastet inn (for hele historien), og denne variabelen brukes på hver side for å vise riktig tekst ...
 int timer;          /// Variabel som holder greie på den totale tiden brukt (i sekunder) ...
 int now, timerTmp;  /// Disse brukes for å 'nullstille' timeren
 String[] arkiv;     /// 'arkiv' er hele historien, lagret i en egen tekstfil.
@@ -38,7 +38,7 @@ void draw() {
   now = hour()*360+minute()*60+second();
   timer = now - timerTmp;
   background(102);
-  lastInnBakgrunn(side);
+  lastInnBilde(side);
   lastInnTekst(side);
   noLoop();
 }
@@ -47,10 +47,10 @@ void draw() {
 
 void lastInnTekst(int s) {
 
-  if (arkiv.length > s) {
+  if ( (arkiv.length > s) && (arkiv[s] != null) ) {
     msg = arkiv[s];
   } else {
-    msg = "The end!!";
+    msg = "The end!";
   }
   fill(0);
   textSize(24);
@@ -59,7 +59,11 @@ void lastInnTekst(int s) {
   text(side, 620, 25);
 }
 
-void lastInnBakgrunn(int s) {
+void lastInnBilde(int s) {
+
+// bildene må ligge i en mappe som heter 'bilder' inne i mappen som heter 'data'
+// så må hvert bilde hete 'bilde_1.png, bilde_2.png' etc for å automatisk bli
+// lastet inn når du kommer til en ny side ...
 
   if (loadImage("bilder/bilde_"+s+".png") != null) {
     img = loadImage("bilder/bilde_"+s+".png");
@@ -69,14 +73,27 @@ void lastInnBakgrunn(int s) {
 
 
 void keyPressed() {
-  if (key=='a') {
-    msg = "Hei! Du trykket på bokstaven 'a'???";
+
+/// her kan man egentlig legge inn hele 'logikken' til historien
+/// Sjekk hvilken side du er på og sjekk om de svarer 'ja','nei'
+/// eller andre alternativer som du har gitt (kanskje 'vet ikke?') ...
+
+/* Første spørrepunkt er altså side 5 med 'ja' eller 'nei' */
+
+  if ( key == 'j' && side == 5 ) {
+    /// her har altså brukeren svart 'ja' på å tjene lett-tjente penger
+    /// så da må vi bestemme hvilken side han skal gå til og om det eventuelt
+    /// er andre variabler (helse, moral, flaks, penger etc) som skal forandres
+
+    side == 200;
+    
   } else {
-    msg = "Du trykket på en annen bokstav";
+    /// hvis svaret er 'nei' så fortsetter vi som vanlig ...
+    side++;
   }
   println("key == "+key);
   println("keyCode == "+keyCode);
   println("timer == " + timer);
-  side++;
+
   loop();
 }
