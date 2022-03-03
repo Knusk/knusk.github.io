@@ -32,21 +32,21 @@ class Kjegle {
     posx = xpos;
     posy = ypos;
 
-    sinx = sin(sinval)*60;
+    sinx = sin(sinval)*60*shipscale;
     sinval += sinstep;
     if (floor(random(200)) < 20 ) {
       x3 += sinx;
       x4 += sinx;
-      if (x3 > 130 || x3 < -130) {
-        x3 = 130*shipscale;
-        x4 = 40*shipscale;
+      if (x4 > 130 || x3 < -130) {
+        x3 = 25*shipscale;
+        x4 = -25*shipscale;
       }
     }
    if (floor(random(100))==1 && lights_on) {
       lights_on = !lights_on;
     }
 
-    if (floor(random(300))==1 && !lights_on) {
+    if (floor(random(500))==1 && !lights_on) {
       lights_on = !lights_on;
     }
     if (lights_on) {
