@@ -18,7 +18,7 @@ Kjegle k;
     yspeed = ysp;
     ship_rotate = random(0.2)+0.1;
     ufo_shape = loadShape("ufo.svg");  // svg-fil lagret i 'data' ...
-    k = new Kjegle(xpos, ypos);
+    k = new Kjegle(0, 0);
   }
 
   /// intern funksjon som tar seg av 'kjøringa' ...
