@@ -1,13 +1,14 @@
+class Kjegle{
+
 float x1, x2, x3, x4, y1, y2, y3, y4;
 float sinx = 0;
 float sinstep = .1;
 float sinval = -PI;
 boolean lights_on = false;
 
-void setup()
+Kjegle()
 {
-  size(400, 400);
-  rectMode(CENTER);
+  
   x1 = 70;
   x2 = 100;
   x3 = 130;
@@ -19,16 +20,10 @@ void setup()
 }
 
 
-void draw() {
-  background(230, 190, 190);
-  stroke(0);
-  fill(30,30,100);
-  rect(200, 200, 200, 200);
-  kjegle();
-}
 
 
-void kjegle() {
+
+void update(float x1_, float y1_) {
 
   sinx = sin(sinval)*60;
   sinval += sinstep;
@@ -49,4 +44,5 @@ void kjegle() {
     fill(230,230,0,140);
     quad(x1, y1, x2, y2, x3, y3, x4, y4);
   }
+}
 }
