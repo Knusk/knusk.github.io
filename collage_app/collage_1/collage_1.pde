@@ -1,13 +1,14 @@
 
-Ufo_[] ufos = new Ufo_[40];
+Bilde_[] bilder = new Bilde_[4];
 
 void  setup() {
 
   size(400, 400);
   rectMode(CENTER);
   noStroke();
-  for (int l=0; l<ufos.length-1; l++) {
-    ufos[l] = new Ufo_(random(-width)-30, random(3)+.1, .1*l, random(3)+.1, l*0.03 );
+  for (int l=0; l<bilder.length-1; l++) {
+    ////            Bilde_(float xp,      float yp,       float xsp,   float ysp,  float bi_sc, PImage img)
+    bilder[l] = new Bilde_(random(width), random(height), random(3)-3, random(3)-3, 1,    loadImage("eple.tif")          );
   }
 }
 
@@ -28,7 +29,7 @@ ellipse(-100,350,600,200);
   /// ufos[1].update();
   /// ufos[2].update();
   
-  for (int n=0; n<ufos.length-1; n++){
-    ufos[n].update();
+  for (int n=0; n<bilder.length-1; n++){
+    bilder[n].update();
 }
 }
