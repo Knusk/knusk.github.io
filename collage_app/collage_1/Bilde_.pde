@@ -29,14 +29,16 @@ class Bilde_ {
   /// intern funksjon som tar seg av 'kjøringa' ...
 
   void update() {
-      xpos += xspeed*bilde_scale;
-      ypos += yspeed*bilde_scale;
+    
+    
+      xpos += xspeed;
+      ypos += yspeed;
 
       
       pushMatrix();
       translate(xpos, ypos);
       rotate(bilde_rotate);
-      image(bilde, 0, 0);
+      image(bilde, -50, -50,100,100);
       popMatrix();
       fill(255, 255, 255);
     ////
@@ -48,7 +50,7 @@ class Bilde_ {
     }
 
     if (floor(random(40))==12) {
-      xspeed = tmp_xspeed*bilde_scale;
+      xspeed = tmp_xspeed;
       bilde_rotate *= -1;
     }
 
