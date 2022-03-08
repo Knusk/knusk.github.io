@@ -1,5 +1,5 @@
 
-Bilde_[] bilder = new Bilde_[11];
+Bilde_[] bilder = new Bilde_[12];
 
 void  setup() {
 

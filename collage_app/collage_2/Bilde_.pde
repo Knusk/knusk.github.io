@@ -22,7 +22,7 @@ class Bilde_ {
     xspeed = xsp;
     yspeed = ysp;
     tmp_xspeed = xspeed;
-    bilde_rotate = random(0.2)+0.1;
+    bilde_rotate = random(TAU);
     bilde_scale = bi_sc;
     bilde = img;
 
@@ -36,8 +36,8 @@ class Bilde_ {
 
 
 
-      xpos += xspeed;
-      ypos += yspeed;
+      //xpos += xspeed;
+      //ypos += yspeed;
 
       pushMatrix();
       translate(xpos, ypos);
@@ -47,21 +47,11 @@ class Bilde_ {
       fill(255, 255, 255);
     ////
 
-    if (floor(random(40))==10) {
-      yspeed *= -1;
-      xspeed = 0;
-      bilde_rotate *= -1;
-    }
-
-    if (floor(random(40))==12) {
-      xspeed = tmp_xspeed*bilde_scale;
-      bilde_rotate *= -1;
-    }
+   
 
 
-
-    if (xpos > width*2) {
-      xpos = -100;
+    if (xpos > width+bw) {
+      xpos = random(width);
       ypos = random(height);
     }
   }
