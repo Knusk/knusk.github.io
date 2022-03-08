@@ -35,9 +35,9 @@ class Bilde_ {
   void update() {
 
 
+
       xpos += xspeed;
       ypos += yspeed;
-
 
       pushMatrix();
       translate(xpos, ypos);
