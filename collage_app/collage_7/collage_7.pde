@@ -11,7 +11,7 @@ void  setup() {
   
   for (int l=0; l<bilder.length; l++) {
     ////            Bilde_(f_xp,          f_yp,           f_xsp,        d_ysp,  f_bi_sc,  img)
-    bilder[l] = new Bilde_(random(width), random(height), 1,            1,       .2,      loadImage("bilde_"+l+".png") );
+    bilder[l] = new Bilde_(random(width), random(height), random(2)-1,            1,       .2,      loadImage("bilde_"+l+".png") );
   }
 }
 
