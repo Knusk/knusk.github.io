@@ -52,18 +52,18 @@ void lastInnTekst(int s) {
   } else {
     msg = "The end!";
   }
-  
+
   textSize(40);
   fill(0);
   textLeading(42);
-  text(msg, 100, 95, 400, 300);  
+  text(msg, 100, 95, 400, 300);
   fill(230,230,220);
   text(msg, 101, 96, 400, 300);
-  
-  
+
+
   textSize(18);
   text(side, 620, 25); /// er vel kanskje bare sidetallet oppe i høyre hjørne??
-  
+
 }
 
 void lastInnBilde(int s) {
@@ -92,10 +92,10 @@ void keyPressed() {
 
   //
   /* switch - case ser sånn ut:
-   
+
    denne kan f.eks. komme etter at vi har spurt et 'ja/nei'-spørsmål eller liknende, eller at vi i
    alle fall vet at her skal historien 'hoppe' til et annet sted ...
-   
+
    if (hoppiteksten){   /// hoppiteksten er en boolean som vi setter til true dersom vi vet at vi skal hoppe videre ...
      switch(side) {
        case '3':
@@ -112,15 +112,15 @@ void keyPressed() {
        break;
        }
    }
-   
+
    */
 
-  if ( key == 'j' && side == 5 ) {
+  if ( key == 'j' && side == 4 ) {
     /// her har altså brukeren svart 'ja' på å tjene lett-tjente penger
     /// så da må vi bestemme hvilken side han skal gå til og om det eventuelt
     /// er andre variabler (helse, moral, flaks, penger etc) som skal forandres
 
-    side = 200;
+    side = 100;
   } else {
     /// hvis svaret er 'nei' så fortsetter vi som vanlig ...
     side++;
