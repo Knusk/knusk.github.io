@@ -23,4 +23,6 @@ void draw() {
   for (int n=0; n<bilder.length; n++){
     bilder[n].update();
 }
+
+println("xpos = " + bilder[9].xpos);
 }

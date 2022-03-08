@@ -8,6 +8,7 @@ class Bilde_ {
   float xspeed, yspeed, tmp_xspeed;  //// xspeed er farten bildet beveger seg på x-aksen, samme for yspeed, men altså på yaksen ...
 
   float bilde_rotate;
+  float bilde_rotate_step;
   float bilde_scale;
   float bw, bh;
   ///
@@ -23,6 +24,7 @@ class Bilde_ {
     yspeed = ysp;
     tmp_xspeed = xspeed;
     bilde_rotate = random(TAU);
+    bilde_rotate_step = 0; // (random(1)-0.5)/80;
     bilde_scale = bi_sc;
     bilde = img;
 
@@ -35,30 +37,35 @@ class Bilde_ {
   void update() {
 
 
-
+    bilde_rotate += bilde_rotate_step;
     xpos += xspeed;
-    //ypos += yspeed;
+    ypos += yspeed;
 
     pushMatrix();
-   // translate(width/2, 0);
-    //rotate(bilde_rotate);
-    image(bilde, xpos, ypos, bw, bh);
+   translate(width/2,0);
+    translate(xpos, ypos);
+     rotate(bilde_rotate);
+    image(bilde, -bw/2, -bh/2, bw, bh);
     popMatrix();
     ////
     pushMatrix();
-    //translate(width/2, 0);
-    //rotate(bilde_rotate);
+    translate(width/2,0);
+    translate(-xpos, ypos);
+    rotate(-bilde_rotate);
     scale(-1, 1);
-    image(bilde, xpos, ypos, bw, bh);
+    image(bilde, -bw/2, -bh/2, bw, bh);
+   // fill(230,200,200);
+   //  rect(0,0,bw,bh);
     popMatrix();
 
 
 
-    if (Math.abs(xpos) > width) {
-      xspeed = random(2);
-      ypos = random(height);
-      xpos = -bw*2;
+    if (xpos > width || (ypos < -200 && yspeed < 0) || ( ypos > height*2 && yspeed > 0 )) {
+      xspeed = random(2);   // her får bildet en ny fart i x-retningen ...
+      ypos = random(height);  // en tilfeldig plassering på y-aksen
+      xpos = (-width/2)-bw;    /// prøver å plassere bildet på utsiden av 'framen' ...
+      yspeed = random(2)-1;
+      bilde_rotate_step = random(1)>0.5 ? random(.02) : random(-.002) ;
     }
- 
   }
 }
