@@ -36,17 +36,17 @@ class Bilde_ {
 
 
 
-    //xpos += xspeed;
+    xpos += xspeed;
     //ypos += yspeed;
 
     pushMatrix();
-    translate(xpos, ypos);
+    translate(width/2+xpos, ypos);
     //rotate(bilde_rotate);
     image(bilde, 0, 0, bw, bh);
     popMatrix();
     ////
     pushMatrix();
-    translate(xpos, ypos);
+    translate(width/2-xpos, ypos);
     //rotate(bilde_rotate);
     scale(-1, 1);
     image(bilde, 0, 0, bw, bh);
@@ -55,7 +55,7 @@ class Bilde_ {
 
 
     if (xpos > width+bw) {
-      xpos = random(width);
+      xpos = -width;
       ypos = random(height);
     }
   }
