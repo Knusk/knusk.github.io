@@ -61,11 +61,21 @@ class Bilde_ {
 
 
     if (xpos > width || (ypos < -200 && yspeed < 0) || ( ypos > height*2 && yspeed > 0 )) {
-      xspeed = random(2);   // her får bildet en ny fart i x-retningen ...
-      ypos = random(height);  // en tilfeldig plassering på y-aksen
-      xpos = (-width/2)-bw;    /// prøver å plassere bildet på utsiden av 'framen' ...
-      yspeed = random(2)-1;
-      bilde_rotate_step = random(1)>0.5 ? random(.02) : random(-.002) ;
+      xspeed = random(10)>5 ? random(2) : 0;   // her får bildet en ny fart i x-retningen ...
+      if (xspeed == 0){
+          xpos = random(width);
+           ypos = -100;
+            yspeed = random(1);
+      }
+      else {       xpos = (-width/2)-bw; 
+                  yspeed = random(-1);
+                  ypos = random(height);
+            }   /// prøver å plassere bildet på utsiden av 'framen' ...
+
+       // en tilfeldig plassering på y-aksen
+     
+      bilde_rotate_step = random(1)>0.5 ? random(.02) : random(-.02) ;
+      bilde_scale += random(.4)-.2;
     }
   }
 }

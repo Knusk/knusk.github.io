@@ -7,7 +7,7 @@ void  setup() {
   rectMode(CENTER);
   noStroke();
   
-   blendMode(LIGHTEST);
+   // blendMode(ADD);
   
   for (int l=0; l<bilder.length; l++) {
     ////            Bilde_(f_xp,          f_yp,           f_xsp,               d_ysp,     f_bi_sc,     img               )
@@ -18,7 +18,7 @@ void  setup() {
 
 
 void draw() {
- background(240,100,100);
+ background(160,130,120);
   
   for (int n=0; n<bilder.length; n++){
     bilder[n].update();
