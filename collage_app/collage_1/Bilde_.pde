@@ -9,6 +9,7 @@ class Bilde_ {
 
   float bilde_rotate;
   float bilde_scale;
+  float bw, bh;
   ///
   /// noen variabler er faste (slik som 'ship_rotate'), og noen blir styrt 'internt'
   ///
@@ -24,19 +25,24 @@ class Bilde_ {
     bilde_rotate = random(0.2)+0.1;
     bilde_scale = bi_sc;
     bilde = img;
+
+    bw = bilde.width;
+    bh = bilde.height;
   }
 
   /// intern funksjon som tar seg av 'kjøringa' ...
 
   void update() {
-      xpos += xspeed*bilde_scale;
-      ypos += yspeed*bilde_scale;
 
+
+
+      xpos += xspeed;
+      ypos += yspeed;
 
       pushMatrix();
       translate(xpos, ypos);
       rotate(bilde_rotate);
-      image(bilde, 0, 0);
+      image(bilde, 0, 0, bw, bh);
       popMatrix();
       fill(255, 255, 255);
     ////
