@@ -1,5 +1,5 @@
 
-Bilde_[] bilder = new Bilde_[12];
+Bilde_[] bilder = new Bilde_[16];
 
 void  setup() {
 
@@ -7,11 +7,11 @@ void  setup() {
   rectMode(CENTER);
   noStroke();
   
-   // blendMode(ADD);
+    blendMode(MULTIPLY);
   
   for (int l=0; l<bilder.length; l++) {
-    ////            Bilde_(f_xp,          f_yp,           f_xsp,               d_ysp,     f_bi_sc,     img               )
-    bilder[l] = new Bilde_(random(width), random(height), random(2)-1,            1,       .25,      loadImage("bilde_"+l+".png") );
+    ////            Bilde_(f_xp, f_yp, f_xsp, f_ysp, f_bi_sc, bildenavn)
+    bilder[l] = new Bilde_( random(width), random(height)+height, random(2)-1, 1, 0.15, loadImage("bilde_"+l+".png") );
   }
 }
 

@@ -63,8 +63,8 @@ void lastInnTekst(int s, int t) {
   
   
   textSize(18);
-  text("Side: "+s, 610, 25); /// sidetallet oppe i høyre hjørne
-  text("Timer: "+t, 610, 45);  /// timer ... usikker på om det er noe bruk for den, men dog ...
+  text("Side: "+s, 570, 25); /// sidetallet oppe i høyre hjørne
+  text("Timer: "+t, 570, 45);  /// timer ... usikker på om det er noe bruk for den, men dog ...
 loop();
 }
 

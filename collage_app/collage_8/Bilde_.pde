@@ -28,6 +28,10 @@ class Bilde_ {
     bilde_scale = bi_sc;
     bilde = img;
 
+    if (bilde.width > 800) {
+      bilde.width = 300;
+      println("Bildet er stort, nedjustert scale!");
+    }
     bw = bilde.width * bilde_scale;
     bh = bilde.height * bilde_scale;
   }
@@ -42,38 +46,38 @@ class Bilde_ {
     ypos += yspeed;
 
     pushMatrix();
-   translate(width/2,0);
+    translate(width/2, 0);
     translate(xpos, ypos);
-     rotate(bilde_rotate);
+    rotate(bilde_rotate);
     image(bilde, -bw/2, -bh/2, bw, bh);
     popMatrix();
     ////
     pushMatrix();
-    translate(width/2,0);
+    translate(width/2, 0);
     translate(-xpos, ypos);
     rotate(-bilde_rotate);
     scale(-1, 1);
     image(bilde, -bw/2, -bh/2, bw, bh);
-   // fill(230,200,200);
-   //  rect(0,0,bw,bh);
+    // fill(230,200,200);
+    //  rect(0,0,bw,bh);
     popMatrix();
 
 
 
     if (xpos > width || (ypos < -200 && yspeed < 0) || ( ypos > height*2 && yspeed > 0 )) {
       xspeed = random(10)>5 ? random(2) : 0;   // her får bildet en ny fart i x-retningen ...
-      if (xspeed == 0){
-          xpos = random(width);
-           ypos = -100;
-            yspeed = random(1);
-      }
-      else {       xpos = (-width/2)-bw; 
-                  yspeed = random(-1);
-                  ypos = random(height);
-            }   /// prøver å plassere bildet på utsiden av 'framen' ...
+      if (xspeed == 0) {
+        xpos = random(200);
+        ypos = -bh;
+        yspeed = random(1)+1;
+      } else {
+        xpos = -width;
+        yspeed = random(-1)-1;
+        ypos = height+random(height);
+      }   /// prøver å plassere bildet på utsiden av 'framen' ...
 
-       // en tilfeldig plassering på y-aksen
-     
+      // en tilfeldig plassering på y-aksen
+
       bilde_rotate_step = random(1)>0.5 ? random(.02) : random(-.02) ;
       bilde_scale += random(.4)-.2;
     }
