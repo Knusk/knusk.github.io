@@ -1,8 +1,8 @@
+
 Du sitter inne og ser på TV. Som vanlig er det ingen ting å se på.
 Etter en stund bestemmer du deg for å gjøre noe annet. "Livet er for kort til å kaste bort på dette her!" roper du ut.
 Ute regner det, men du har bestemt deg nå. I det du går ut lurer du på om du skal ta med mobilen eller ikke.
 Tar du med deg telefonen din? \n(Trykk j for 'ja' eller n for 'nei')
-
 
 
 
