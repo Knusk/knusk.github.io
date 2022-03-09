@@ -39,13 +39,13 @@ void draw() {
   timer = now - timerTmp;
   background(102);
   lastInnBilde(side);
-  lastInnTekst(side);
-  noLoop();
+  lastInnTekst(side, timer);
+  //noLoop();
 }
 
 
 
-void lastInnTekst(int s) {
+void lastInnTekst(int s, int t) {
 
   if ( (arkiv.length > s) && (arkiv[s] != null) ) {
     msg = arkiv[s];
@@ -59,11 +59,13 @@ void lastInnTekst(int s) {
   text(msg, 100, 95, 400, 300);
   fill(230,230,220);
   text(msg, 101, 96, 400, 300);
-
-
+ 
+  
+  
   textSize(18);
-  text(side, 620, 25); /// er vel kanskje bare sidetallet oppe i høyre hjørne??
-
+  text("Side: "+s, 610, 25); /// sidetallet oppe i høyre hjørne
+  text("Timer: "+t, 610, 45);  /// timer ... usikker på om det er noe bruk for den, men dog ...
+loop();
 }
 
 void lastInnBilde(int s) {
@@ -74,8 +76,9 @@ void lastInnBilde(int s) {
 
   if (loadImage("bilder/bilde_"+s+".png") != null) {
     img = loadImage("bilder/bilde_"+s+".png");
-    image(img, 30, 30);
+    image(img, -30, -30, img.width*0.5, img.height*0.5);
   }
+  
 }
 
 
@@ -87,39 +90,9 @@ void keyPressed() {
 
   /* Første spørrepunkt er altså side 5 med 'ja' eller 'nei' */
 
-  /// Det vil nok være best å bruke 'switch case' i dette tilfellet, som er en fin måte å spørre et
-  /// spørsmål hvor svaret kan være veldig mye forskjellig (slik som vi har her)
-
-  //
-  /* switch - case ser sånn ut:
-
-   denne kan f.eks. komme etter at vi har spurt et 'ja/nei'-spørsmål eller liknende, eller at vi i
-   alle fall vet at her skal historien 'hoppe' til et annet sted ...
-
-   if (hoppiteksten){   /// hoppiteksten er en boolean som vi setter til true dersom vi vet at vi skal hoppe videre ...
-     switch(side) {
-       case '3':
-       side = 400;  // Vi hopper til riktig  sted ...
-       break;
-       case '9':
-       side = 500;  // Vi hopper til riktig  sted ...
-       break;
-       case '19':
-       side = 600;  // Vi hopper igjen til riktig  sted ...
-       break;
-       default:
-       side = 999;   // Vi går til siste side (som kanskje gir en feilmelding eller noe sånt ...
-       break;
-       }
-   }
-
-   */
-
+ 
   if ( key == 'j' && side == 4 ) {
-    /// her har altså brukeren svart 'ja' på å tjene lett-tjente penger
-    /// så da må vi bestemme hvilken side han skal gå til og om det eventuelt
-    /// er andre variabler (helse, moral, flaks, penger etc) som skal forandres
-
+    /// her har altså brukeren svart 'ja' og vi hopper til side 100 ...
     side = 100;
   } else {
     /// hvis svaret er 'nei' så fortsetter vi som vanlig ...
@@ -129,5 +102,4 @@ void keyPressed() {
   println("keyCode == "+keyCode);
   println("timer == " + timer);
 
-  loop();
 }
