@@ -59,9 +59,9 @@ void lastInnTekst(int s, int t) {
   text(msg, 100, 95, 400, 300);
   fill(230,230,220);
   text(msg, 101, 96, 400, 300);
- 
-  
-  
+
+
+
   textSize(18);
   text("Side: "+s, 570, 25); /// sidetallet oppe i høyre hjørne
   text("Timer: "+t, 570, 45);  /// timer ... usikker på om det er noe bruk for den, men dog ...
@@ -78,7 +78,7 @@ void lastInnBilde(int s) {
     img = loadImage("bilder/bilde_"+s+".png");
     image(img, -30, -30, img.width*0.5, img.height*0.5);
   }
-  
+
 }
 
 
@@ -90,7 +90,7 @@ void keyPressed() {
 
   /* Første spørrepunkt er altså side 5 med 'ja' eller 'nei' */
 
- 
+
   if ( key == 'j' && side == 4 ) {
     /// her har altså brukeren svart 'ja' og vi hopper til side 100 ...
     side = 100;
