@@ -28,8 +28,8 @@ class Bilde_ {
     bilde_scale = bi_sc;
     bilde = img;
 
-    if (bilde.width > 800) {
-      bilde.width = 300;
+    if (bilde.width * bilde_scale > 300) {
+      bilde_scale *= 0.6;
       println("Bildet er stort, nedjustert scale!");
     }
     bw = bilde.width * bilde_scale;

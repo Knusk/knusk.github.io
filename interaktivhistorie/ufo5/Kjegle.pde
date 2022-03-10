@@ -19,9 +19,8 @@ class Kjegle {
     x4 = (posx-50)*shipscale;
     y1 = posy*shipscale;
     y2 = posy*shipscale;
-    y3 = (posy+200)*shipscale;
-    y4 = (posy+200)*shipscale;
-    
+    y3 = 200+posy*shipscale;
+     y4 = 200+posy*shipscale;
   }
 
 
@@ -42,7 +41,7 @@ class Kjegle {
         x4 = -25*shipscale;
       }
     }
-   if (floor(random(100))==1 && lights_on) {
+    if (floor(random(100))==1 && lights_on) {
       lights_on = !lights_on;
     }
 
@@ -51,11 +50,19 @@ class Kjegle {
     }
     if (lights_on) {
       noStroke();
-      fill(230, 230, 0, 140);
-      pushMatrix();
-      translate(posx, posy);
-      quad(x1, y1, x2, y2, x3, y3, x4, y4);
-      popMatrix();
+      for (int l=1; l<10; l++) {
+        
+        fill(230, 230, 0, 255-(l*25) );
+        pushMatrix();
+        translate(posx, posy);
+        quad(x1, y1, x2, y2, x3, y3, x4, y4);
+        
+        popMatrix();
+        
+        
+      }
+     
+
     }
   }
 }
