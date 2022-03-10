@@ -54,7 +54,7 @@ void draw() {
 
 void tan_line(float vinkel, float lengde, int count) {
 
-
+//stroke(0);
   int n = count;
 
   float factor = (n*255/beamSteps);
@@ -72,6 +72,6 @@ void tan_line(float vinkel, float lengde, int count) {
   y2 = l1*n;
   y3 = l1*(n+1);
   y4 = l1*(n+1);
-  fill(250, 255-(n*255/beamSteps), 20+15*n, 255-(n*255/beamSteps) );
+  fill(250, 255-factor, factor, 255-factor );
   quad(x1, y1, x2, y2, x3, y3, x4, y4);
 }
