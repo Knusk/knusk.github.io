@@ -30,12 +30,12 @@ Kjegle2 k;
       xpos += xspeed*ship_scale;
       ypos += yspeed*ship_scale;
 
-      k.update(xpos, ypos);
+      k.update(xpos, ypos, ship_rotate);
       fill(200, 100, 100);
       pushMatrix();
       translate(xpos, ypos);
       rotate(ship_rotate);
-      shape(ufo_shape, -25*ship_scale, -25*ship_scale, 50*ship_scale, 50*ship_scale);
+      shape(ufo_shape, -25*ship_scale, -30*ship_scale, 50*ship_scale, 30*ship_scale);
       popMatrix();
       fill(255, 255, 255);
     ////

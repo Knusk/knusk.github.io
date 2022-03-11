@@ -5,9 +5,7 @@ class Kjegle2{
 
   float v_1, v_2, v_3;
   float l1;
-
   float x1, x2, x3, x4, y1, y2, y3, y4;
-
   float vStep;
   float sinusV, sinusB;
 
@@ -18,13 +16,12 @@ class Kjegle2{
     posx = xpos;
     posy = ypos;
     shipscale = ship_scale;
-    l1 = 5; /// lengden rett nedover ...
+    l1 = 5*shipscale; /// lengden rett nedover ganget med shipscale ...
     vStep = TAU/400;
     //// skal bruke en sinusbølge som vinkel til kjeglen ...
-    sinusV = 0;  /// tenker å la denne øke hele tiden med vStep ...
+    sinusV = random(TAU);  /// tenker å la denne øke hele tiden med vStep ...
     sinusB = 0;   /// denne bølgen blir resultatet av sin(sinusV)*n;
     beamSteps = 50;
-
   }
 
 
