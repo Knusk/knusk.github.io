@@ -52,14 +52,20 @@ class Bilde_ {
     image(bilde, -bw/2, -bh/2, bw, bh);
     popMatrix();
     ////
+
+    ///// for å 'speile' bildet, legges det bare inn én gang til,
+    ///// og 'flippes' over på siden ved å bruke scale(-1,1) ...
+
     pushMatrix();
     translate(width/2, 0);
     translate(-xpos, ypos);
     rotate(-bilde_rotate);
     scale(-1, 1);
     image(bilde, -bw/2, -bh/2, bw, bh);
-    // fill(230,200,200);
+    ////
+    // fill(230,200,200);  /// dette ble brukt for debugging ...
     //  rect(0,0,bw,bh);
+    /////
     popMatrix();
 
 
