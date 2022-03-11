@@ -50,16 +50,19 @@ class Kjegle {
     }
     if (lights_on) {
       noStroke();
-     
+      for (int l=1; l<10; l++) {
         
-        fill(230, 230, 0,100 );
+        fill(230, 230, 0, 255-(l*25) );
         pushMatrix();
         translate(posx, posy);
         quad(x1, y1, x2, y2, x3, y3, x4, y4);
         
         popMatrix();
         
-      
+        
+      }
+     
+
     }
   }
 }
