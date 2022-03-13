@@ -7,11 +7,11 @@ void  setup() {
   rectMode(CENTER);
   noStroke();
   
-    blendMode(MULTIPLY);
+    blendMode(DARKEST);
   
   for (int l=0; l<bilder.length; l++) {
-    ////            Bilde_(f_xp, f_yp, f_xsp, f_ysp, f_bi_sc, bildenavn)
-    bilder[l] = new Bilde_( random(width), random(height)+height, random(2)-1, 1, 0.15, loadImage("bilde_"+l+".png") );
+    ////            Bilde_(f_xp, f_yp, bildenavn)
+    bilder[l] = new Bilde_( -200+random(width)/2, l*40, loadImage("bilde_"+l+".png") );
   }
 }
 
