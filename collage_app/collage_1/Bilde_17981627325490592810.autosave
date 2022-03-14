@@ -9,14 +9,13 @@ class Bilde_ {
 
   float bilde_rotate;
   float bilde_scale;
-  float bw, bh;
   ///
   /// noen variabler er faste (slik som 'ship_rotate'), og noen blir styrt 'internt'
   ///
- PImage bilde;
+  PImage bilde;
 
 
- Bilde_ (float xp, float yp, float xsp, float ysp, float bi_sc, PImage img) {
+  Bilde_ (float xp, float yp, float xsp, float ysp, float bi_sc, PImage img) {
     xpos = xp;
     ypos = yp;
     xspeed = xsp;
@@ -26,8 +25,7 @@ class Bilde_ {
     bilde_scale = bi_sc;
     bilde = img;
 
-    bw = bilde.width;
-    bh = bilde.height;
+    int bw = bilde.width;
   }
 
   /// intern funksjon som tar seg av 'kjøringa' ...
@@ -35,16 +33,16 @@ class Bilde_ {
   void update() {
 
 
+    xpos += xspeed;
+    ypos += yspeed;
 
-      xpos += xspeed;
-      ypos += yspeed;
 
-      pushMatrix();
-      translate(xpos, ypos);
-      rotate(bilde_rotate);
-      image(bilde, 0, 0, bw, bh);
-      popMatrix();
-      fill(255, 255, 255);
+    pushMatrix();
+    translate(xpos, ypos);
+    rotate(bilde_rotate);
+    image(bilde, 0, 0);
+    popMatrix();
+    fill(255, 255, 255);
     ////
 
     if (floor(random(40))==10) {
@@ -52,12 +50,6 @@ class Bilde_ {
       xspeed = 0;
       bilde_rotate *= -1;
     }
-
-    if (floor(random(40))==12) {
-      xspeed = tmp_xspeed*bilde_scale;
-      bilde_rotate *= -1;
-    }
-
 
 
     if (xpos > width*2) {
