@@ -28,18 +28,18 @@ class Bilde_ {
     bilde_scale = bi_sc;
     bilde = img;
 
-    if (bilde.width * bilde_scale > 300) {
-      bilde_scale *= 0.6;
-      println("Bildet er stort, nedjustert scale!");
-    }
-    bw = bilde.width * bilde_scale;
-    bh = bilde.height * bilde_scale;
+    
   }
 
   /// intern funksjon som tar seg av 'kjøringa' ...
 
   void update() {
-
+if (bilde.width * bilde_scale > 300) {
+      bilde_scale *= 0.6;
+      println("Bildet er stort, nedjustert scale!");
+    }
+    bw = bilde.width * bilde_scale;
+    bh = bilde.height * bilde_scale;
 
     bilde_rotate += bilde_rotate_step;
     xpos += xspeed;
@@ -70,7 +70,7 @@ class Bilde_ {
 
 
 
-    if (xpos > width || (ypos < -200 && yspeed < 0) || ( ypos > height*2 && yspeed > 0 )) {
+    if (xpos+bw > width || (ypos < -bh && yspeed < 0) || ( ypos > height+bh && yspeed > 0 )) {
       xspeed = random(10)>5 ? random(2) : 0;   // her får bildet en ny fart i x-retningen ...
       if (xspeed == 0) {
         xpos = random(200);
@@ -85,7 +85,7 @@ class Bilde_ {
       // en tilfeldig plassering på y-aksen
 
       bilde_rotate_step = random(1)>0.5 ? random(.02) : random(-.02) ;
-      bilde_scale += random(.4)-.2;
+      bilde_scale += random(1)-.2;
     }
   }
 }

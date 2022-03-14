@@ -23,7 +23,7 @@ class Bilde_ {
     xspeed = xsp;
     yspeed = ysp;
     tmp_xspeed = xspeed;
-    bilde_rotate = random(TAU);
+    bilde_rotate = 0; //random(TAU);
     bilde_rotate_step = 0; // (random(1)-0.5)/80;
     bilde_scale = bi_sc;
     bilde = img;
@@ -40,7 +40,13 @@ class Bilde_ {
 
   void update() {
 
+    bw = bilde.width * bilde_scale;
+    bh = bilde.height * bilde_scale;
 
+    if (bilde.width * bilde_scale > 300) {
+      bilde_scale *= 0.6;
+      println("Bildet er stort, nedjustert scale!");
+    }
     bilde_rotate += bilde_rotate_step;
     xpos += xspeed;
     ypos += yspeed;
@@ -84,8 +90,9 @@ class Bilde_ {
 
       // en tilfeldig plassering på y-aksen
 
-      bilde_rotate_step = random(1)>0.5 ? random(.02) : random(-.02) ;
-      bilde_scale += random(.4)-.2;
+      // bilde_rotate_step = random(1)>0.5 ? random(.02) : random(-.02) ;
+      bilde_scale = random(.5)+0.1;
+      println("bilde_scale for bilde #"+bilde+" er "+bilde_scale);
     }
   }
 }
