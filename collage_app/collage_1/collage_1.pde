@@ -1,5 +1,5 @@
 
-Bilde_[] bilder = new Bilde_[4];
+Bilde_[] bilder = new Bilde_[12];
 
 void  setup() {
 
@@ -18,7 +18,7 @@ void  setup() {
 void draw() {
   background(0,0,100);
 
-  
+
   for (int n=0; n<bilder.length; n++){
 
     bilder[n].update();
