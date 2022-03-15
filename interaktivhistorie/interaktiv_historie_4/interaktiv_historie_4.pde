@@ -8,7 +8,6 @@ PFont f;                        /// Dette er en variabel for å 'holde på' den 
                                 /// Det går fint å lage flere av disse for flere fonter ...
 PImage img;                     /// En variabel for å hente inn bilder ...
 int side;                       /// En variabel som holder orden på sidetallet du er på ...
-int alt;                        /// Alternative sider? Sidespor?
 String msg;                     /// msg = melding = Teksten som dukker opp hver side
                                 /// Det vil si... det er en tekstfil som blir lastet inn (for hele historien), og denne variabelen brukes på hver side for å vise riktig tekst ...
 int timer, timer_per_side;      /// Variabel som holder greie på den totale tiden brukt (i sekunder) ...
@@ -47,13 +46,13 @@ void draw() {
   
   if ( side == 12){
    film_1.play();
-    image(film_1, 0, 0);
+    image(film_1, 0, 0, width, height);
     println("Skulle kjøre film nå ...");
   }
   
     if ( side == 13){
    film_2.play();
-    image(film_2, 0, 0);
+    image(film_2, 0, 0, width, height);
     println("Film_2 skal kjøre film nå ...");
   }
  
