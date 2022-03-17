@@ -1,0 +1,28 @@
+body  {
+  background: #cac;
+  margin: 50px;
+  padding: 0;
+}
+
+*{font-family: sans-serif;}
+
+ul>li{
+  padding: 5px 20px;
+  font-weight: bold;
+  background-color: rgba(200,200,200,0.8);
+  list-style-type: none;
+}
+
+ul>ul>li{
+  /*font-size: 1.5em;*/
+font-weight: bold;
+color: #555;
+background-color: transparent;
+list-style-type: inherit;
+}
+
+ul>ul>ul>li{
+  /* font-size: 1.4em; */
+font-weight: normal;
+color: #333;
+}

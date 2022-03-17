@@ -2,6 +2,7 @@
  *** Et slags system for å lage en interaktiv historie ...
  *** Sidetall er en indikator for hvor du er i historien, men hver side kan også ha alternativt innhold
  *** F.eks. s==12 og alt==1
+ *** Film/video er også en mulighet, men er en del vanskeligere å få til å virke, og særlig interaktivt ...
  */
 
 PFont f;                        /// Dette er en variabel for å 'holde på' den fonten du vil bruke.
@@ -77,12 +78,11 @@ void lastInnBilde(int s) {
   // så må hvert bilde hete 'bilde_1.png, bilde_2.png' etc for å automatisk bli
   // lastet inn når du kommer til en ny side ...
 
-
-    //println("bilder/bilde_"+s+".png");
+  if (loadImage("bilder/bilde_"+s+".png") != null) {
     img = loadImage("bilder/bilde_"+s+".png");
     image(img, -30, -30, img.width*0.5, img.height*0.5);  //// plassering og skalering av bildene (likt for alle per nå)
   }
-
+}
 
 
 
