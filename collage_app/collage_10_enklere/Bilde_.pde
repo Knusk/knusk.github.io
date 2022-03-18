@@ -24,13 +24,13 @@ class Bilde_ {
       bilde_scale *= 0.6;
       println("Bildet er stort, nedjustert scale!");
     }
-    bw = bilde.width * bilde_scale;
-    bh = bilde.height * bilde_scale;
+    
   }
 
 
   void update() {
-
+bw = bilde.width * bilde_scale;
+    bh = bilde.height * bilde_scale;
     pushMatrix();
     translate(width/2, 0);
     translate(xpos, ypos);
