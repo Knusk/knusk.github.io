@@ -35,7 +35,7 @@ class Kjegle2 {
         lights_on = false;
       }
     }
-    if (lights_on) {
+    else if (lights_on) {
       sinusV += vStep;  /// med større vStep vil kjeglen pendle raskere ...
       sinusB = sin(sinusV)*PI/4;
       noStroke();
