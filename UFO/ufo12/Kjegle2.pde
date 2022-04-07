@@ -24,7 +24,6 @@ class Kjegle2 {
     beamSteps = 50;
   }
 
-
   void update(float posx, float posy, float ship_rot) {
     if (!lights_on) { /// lyset er av, skal vi skru det på?
       if (floor(random(1000))==1) {  // ok, vi skrur det på ...
@@ -34,7 +33,8 @@ class Kjegle2 {
       if (floor(random(300))==1) {   /// lyset skal være mere av enn på ...
         lights_on = false;
       }
-    }
+    } 
+    
     if (lights_on) {
       sinusV += vStep;  /// med større vStep vil kjeglen pendle raskere ...
       sinusB = sin(sinusV)*PI/4;
@@ -49,6 +49,7 @@ class Kjegle2 {
       }
     }
   }
+
 
   void tan_line(float vinkel, float lengde, int count) {
     //stroke(0);
