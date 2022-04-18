@@ -83,7 +83,7 @@ void lastInnBilde(int s) {
 
   if (loadImage("bilder/bilde_"+s+".png") != null) {
     img = loadImage("bilder/bilde_"+s+".png");
-    image(img, -30, -30, img.width*0.5, img.height*0.5);  //// plassering og skalering av bildene (likt for alle per nå)
+    image(img, 230, 430, img.width*0.5, img.height*0.5);  //// plassering og skalering av bildene (likt for alle per nå)
   }
 }
 
@@ -108,6 +108,19 @@ void keyPressed() {
       /// hvis svaret er 'nei' så fortsetter vi som vanlig ...
       side++;
     }
+  }
+    
+    else if ( side == 103 ){
+      
+      if (key == 'h' ) {
+        
+        side = 200;
+      }
+      else if ( key == 'v' ){
+        
+        side++;
+      }
+    
   } else if ( keyCode == 32 ) {  /// her er hva som skjer når man ikke skal velge noe, og bare gå videre ...
     side++;
     xpos = -600;

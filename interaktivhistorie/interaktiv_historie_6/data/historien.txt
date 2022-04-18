@@ -4,7 +4,7 @@ Ute regner det, men du har bestemt deg nå. I det du går ut lurer du på om du 
 Tar du med deg telefonen din? (Trykk j for 'ja' eller n for 'nei')
 Du lar telefonen ligge, og går ut med en ubeskrivelig følelse av frihet!
 Når du har gått en stund begynner du å kjenne deg sulten.
-
+Du går inn på en restaurant.
 
 
 
@@ -99,3 +99,5 @@ Når du har gått en stund begynner du å kjenne deg sulten.
 
 Nå er du på linje 100, og historien fortsetter herfra ...
 Problemet nå, er kanskje hvordan du kommer deg videre ...
+Du må velge vei. Høyre eller venstre?
+Trykk 'h' for høyre, eller 'v' for venstre.
