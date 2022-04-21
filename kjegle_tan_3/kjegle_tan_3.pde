@@ -11,11 +11,7 @@ float sinusV, sinusB;
 int beamSteps;
 
 void setup() {
-
-
   size(400, 400);
-
-
   l1 = 5; /// lengden rett nedover ...
   vStep = TAU/400;
 
@@ -29,24 +25,15 @@ void setup() {
 
 
 void draw() {
-
-
   background(220, 180, 180);
-
-
-
-
   sinusV += vStep;
   sinusB = sin(sinusV)*PI/4;
-
-  println(sinusB);
+  //// println(sinusB);
 
   for (int l=1; l<beamSteps; l++) {
     pushMatrix();
     translate(width/2, 50);
-
     tan_line(sinusB, l1, l);
-
     popMatrix();
   }
 }
@@ -54,7 +41,7 @@ void draw() {
 
 void tan_line(float vinkel, float lengde, int count) {
 
-//stroke(0);
+  //stroke(0);
   int n = count;
 
   float factor = (n*255/beamSteps);
