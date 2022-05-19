@@ -11,7 +11,7 @@ void setup() {
   newCat = createImage(cat.width, cat.height, ARGB);
 
   //cat.loadPixels();
-  // bilde = new int[dimension];
+   bilde = new int[dimension];
 }
 
 void draw() {
