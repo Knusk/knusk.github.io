@@ -1,3 +1,4 @@
+float xp,yp;  // verdier som kan brukes for å oppdatere posisjonen
 
 Bilde_[] bilder = new Bilde_[16];
 
@@ -21,8 +22,16 @@ void draw() {
  background(240,240,240);
   
   for (int n=0; n<bilder.length; n++){
-    bilder[n].update();
+    xp = random(width/2)-width/2;
+    yp = random(height);
+    bilder[n].update(xp, yp);
+}
+noLoop();
+//println("xpos = " + bilder[9].xpos);
 }
 
-//println("xpos = " + bilder[9].xpos);
+
+void keyPressed(){
+  
+  loop();
 }

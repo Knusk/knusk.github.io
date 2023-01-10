@@ -10,10 +10,7 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-SELECT column_name(s)
-FROM table1
-LEFT JOIN table2
-ON table1.column_name = table2.column_name;
+
 
 $sql = "SELECT * FROM vitser";
 

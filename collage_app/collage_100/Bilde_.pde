@@ -9,18 +9,17 @@ class Bilde_ {
   Bilde_ (float xp, float yp,  PImage img) {
     xpos = xp;
     ypos = yp;
-
     bilde = img;
   }
 
   /// intern funksjon som tar seg av 'kjøringa' ...
 
-  void update() {
+  void update(float xpos, float ypos) {
 
     pushMatrix();
     translate(width/2, 0);
     translate(xpos, ypos);
-     scale(0.5, 0.5);
+     scale(0.2, 0.2);
     image(bilde, 0,0);
     popMatrix();
 
@@ -30,7 +29,7 @@ class Bilde_ {
     pushMatrix();
     translate(width/2, 0);
     translate(-xpos, ypos);
-    scale(-0.5, 0.5);
+    scale(-0.2, 0.2);
     image(bilde, 0,0);
     popMatrix();
   }
