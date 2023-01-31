@@ -8,16 +8,20 @@ class blob {
   float r_noise_step, g_noise_step, b_noise_step;
   float r_c, g_c, b_c;
   float eSize;
+  float fnum;
 
-  blob(float n1, float n2, float n3) {
+  blob(float n1, float n2, float n3, int num) {
     minX = -50;
     maxX = width+50;
     minY = -50;
     maxY = height+50;
-    x = random(width);
-    y = random(height);
-
-    eSize = 0;
+    
+    x = (width/10)*((num)%6)+200;
+    y = (height/10)*((int)((num)/6))+200;
+    
+    println("num = " + num + "  x = "+(width/10)*((num)%6) + " y = "+(height/10)*((int)((num)/6)));
+    
+fnum = num/100;
     //  rot = random(TWO_PI);
     noise1 = n1;
     noise2 = n2;
@@ -27,9 +31,10 @@ class blob {
     g_noise = 2;
     b_noise = 1;
 
-    r_noise_step = 0.01+random(.02);
-    g_noise_step = 0.02+random(.01);
-    b_noise_step = 0.015+random(.01);
+    r_noise_step = 0.01+fnum;
+    println("fnum = "+fnum);
+    g_noise_step = 0.02+fnum;
+    b_noise_step = 0.015+fnum;
   }
 
   void update() {
