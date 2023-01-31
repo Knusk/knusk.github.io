@@ -9,6 +9,7 @@ class blob {
   float r_c, g_c, b_c;
   float eSize;
   float fnum;
+  float speed;
 
   blob(float n1, float n2, float n3, int num) {
     minX = -50;
@@ -19,9 +20,11 @@ class blob {
     x = (width/10)*((num)%6)+200;
     y = (height/10)*((int)((num)/6))+200;
     
-    println("num = " + num + "  x = "+(width/10)*((num)%6) + " y = "+(height/10)*((int)((num)/6)));
+    //println("num = " + num + "  x = "+(width/10)*((num)%6) + " y = "+(height/10)*((int)((num)/6)));
     
-fnum = num/100;
+    speed = 10;
+    
+fnum = (float)num/30;
     //  rot = random(TWO_PI);
     noise1 = n1;
     noise2 = n2;
@@ -31,10 +34,11 @@ fnum = num/100;
     g_noise = 2;
     b_noise = 1;
 
-    r_noise_step = 0.01+fnum;
+    r_noise_step = 0.01*fnum;
     println("fnum = "+fnum);
-    g_noise_step = 0.02+fnum;
-    b_noise_step = 0.015+fnum;
+    println("num = "+num);
+    g_noise_step = 0.02*fnum;
+    b_noise_step = 0.015*fnum;
   }
 
   void update() {
@@ -56,8 +60,8 @@ fnum = num/100;
     stroke(r_c, g_c, b_c);
     fill(r_c, g_c, b_c, 110);
 
-    x += (noise(noise1)-.5)*25;
-    y += (noise(noise2)-.5)*25;
+    x += (noise(noise1)-.5)*speed;
+    y += (noise(noise2)-.5)*speed;
 
     y = (y<minY) ? maxY : (y>maxY) ? minY : y;
     // x = (x + width) % width;
@@ -65,8 +69,8 @@ fnum = num/100;
 
     ellipse(x, y, eSize, eSize);
 
-    noise1 += .1;
-    noise2 += .13;
-    noise3 += 1.0/20.0;
+    noise1 += .010;
+    noise2 += .013;
+    noise3 += .015;
   }
 }

@@ -18,7 +18,7 @@ void draw() {
   for (int l=myBlobbers.length-1; l>-1; l--) {
     myBlobbers[l].update();
   }
-  noLoop();
+  //noLoop();
 }
 
 void mousePressed() {
