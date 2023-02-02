@@ -24,7 +24,7 @@ class blob {
     
     speed = 10;
     
-fnum = (float)num/30;
+fnum = (float)num/70;
     //  rot = random(TWO_PI);
     noise1 = n1;
     noise2 = n2;
@@ -49,9 +49,9 @@ fnum = (float)num/30;
     g_noise += g_noise_step;
     b_noise += b_noise_step;
 
-    r_c = 8*noise(r_noise)*64;
-    g_c = 8*noise(g_noise)*64;
-    b_c = 8*noise(b_noise)*64;
+    r_c = 256*noise(r_noise);
+    g_c = 256*noise(g_noise);
+    b_c = 256*noise(b_noise);
 
     rotNoiseX = noise(noise1);
     rotNoiseY = noise(noise2);

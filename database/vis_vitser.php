@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost:8889";
-$username = "knut-einar";
-$password = "tullepassord";
+$username = "knuteinar";
+$password = "";
 $dbname = "vitse_db";
 
 $link = mysqli_connect($servername, $username, $password, $dbname);

@@ -4,7 +4,7 @@ class blobbers {
 //// constructor
   blobbers(int num) {
     for (int l=myBlob.length-1; l>-1; l--) {
-      myBlob[l] = new blob(random(0.01)*num + (0.01*l), 100.1 + random(0.01)+ ( 0.01*l), random(0.01)+12+(0.005*l), l );
+      myBlob[l] = new blob(num*0.001*l, 2, 3, l );
     }
   }
 
